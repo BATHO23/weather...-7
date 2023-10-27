@@ -1,4 +1,4 @@
-ody {
+body {
     display: flex;
     justify-content: center;
      background-color: #eee;
@@ -19,7 +19,18 @@ ody {
     border-radius: 8px;
     box-shadow: 0px 0px 10px 2px #00000033;
 }
-
+.card{
+    background: #000000d4;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    width: 2500px;
+    max-width: 3200px;
+    height: 500px;
+    border-radius:10%;
+    margin: 1em;
+}
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
