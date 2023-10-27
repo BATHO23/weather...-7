@@ -44,6 +44,12 @@ fetch(url)
 .then(data => {
     const windSpeed = data.wind.speed;
     const humidity = data.main.humidity;
+    const weatherIconClass = `owf owf-${data.weather[0].id}`;
+
+    const resultText = `City: ${data.name}, Temperature: ${temperatureCelsius.toFixed(2)}°C, Description: ${data.weather[0].description} <i class="${weatherIconClass}"></i>`;
+
+    // Display result in an h3 element with the weather icon
+    document.getElementById('resultText').innerHTML = resultText;
     // Display wind speed in an h3 element
     document.getElementById('windSpeed').textContent = `Wind Speed: ${windSpeed} m/s`;
 
