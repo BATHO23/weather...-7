@@ -114,7 +114,7 @@ function fetchWeatherByCoords(latitude, longitude) {
 
 
             const backgroundImageUrl = getBackgroundImage(data.weather[0].description);
-            body.style.backgroundImage = `url(${backgroundImageUrl})`;
+            body.style.backgroundImage = `url(${https://images.unsplash.com/photo-})`;
 
             updateDateTime();
         })
