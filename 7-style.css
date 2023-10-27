@@ -66,3 +66,7 @@ h3{
     text-transform: capitalize;
     margin-left:  8px;
 }
+image {
+    display: inline-flex;
+    text-align: left;
+  }
