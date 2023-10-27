@@ -1,7 +1,14 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-}
+ody {
+    display: flex;
+    justify-content: center;
+     background-color: #eee;
+     align-items: center;
+     height: 100vh;
+     margin: 0%;
+   font-family: "Poppins", sans-serif;
+     background-color:#222;
+     background-image: url('https://plus.unsplash.com/premium_photo-1678167657994-5b96138b6abb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c291cmNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=1000&q=60');
+   }
 
 .container {
     max-width: 400px;
