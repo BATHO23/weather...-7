@@ -42,15 +42,8 @@ function getCurrentLocation() {
 fetch(url)
 .then(response => response.json())
 .then(data => {
-    const temperatureCelsius = data.main.temp;
     const windSpeed = data.wind.speed;
     const humidity = data.main.humidity;
-
-    const resultText = `City: ${data.name}, Temperature: <i class="fas fa-thermometer-half"></i> ${temperatureCelsius.toFixed(2)}°C, Description: ${data.weather[0].description}`;
-    
-    // Display result in an h3 element with Font Awesome icon
-    document.getElementById('resultText').innerHTML = resultText;
-
     // Display wind speed in an h3 element
     document.getElementById('windSpeed').textContent = `Wind Speed: ${windSpeed} m/s`;
 
@@ -112,9 +105,20 @@ function fetchWeatherByCoords(latitude, longitude) {
            
             document.getElementById('resultText').textContent = resultText;
 
+            const axios = require('axios');
 
-            const backgroundImageUrl = getBackgroundImage(data.weather[0].description);
-            body.style.backgroundImage = `url(${https://images.unsplash.com/photo-})`;
+const weatherDescription = data.weather[0].description;
+const unsplashApiUrl = https;//api.unsplash.com/photos/random?query=${weatherDescription}&orientation=landscape&client_id=wSM76rP3L2vzq8ipLb4s8MWA0LUfRGTMrHvTpzAEO-4;
+
+axios.get(unsplashApiUrl)
+  .then(response => {
+    const backgroundImageUrl = response.data.urls.regular;
+    body.style.backgroundImage = url(${backgroundImageUrl});
+  })
+  .catch(error => {
+    console.log(error);
+    // handle errors
+  });
 
             updateDateTime();
         })
