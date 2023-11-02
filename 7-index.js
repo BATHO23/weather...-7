@@ -120,8 +120,7 @@ function fetchWeatherByCoords(latitude, longitude) {
             const temperatureFahrenheit = (temperatureCelsius * 9/5) + 32;
 
             const resultText = `City: ${data.name}, Temperature: ${temperatureCelsius.toFixed(2)}°C / ${temperatureFahrenheit.toFixed(2)}°F, Description: ${data.weather[0].description}`;
-            const backgroundImageUrl = getBackgroundImage(data.weather[0].description);
-            body.style.backgroundImage = `url(${backgroundImageUrl})`;
+
         })
         .catch(error => {
             console.error('Error fetching weather data:', error);
