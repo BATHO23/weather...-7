@@ -1,3 +1,51 @@
+function displayDateTime() {
+    const now = new Date();
+    const dayOfWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ][now.getDay()];
+    const time = now.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+    const dateTimeString = `${dayOfWeek} ${time}`;
+    document.getElementById("date-time").textContent = dateTimeString;
+  }
+  
+  function convertToFahrenheit(celsius) {
+    return (celsius * 9) / 5 + 32;
+  }
+  
+  document.getElementById("convert-link").addEventListener("click", function (e) {
+    e.preventDefault();
+    const tempCelsius = parseFloat(
+      document.getElementById("temp-celsius").textContent
+    );
+    if (e.target.textContent === "Convert to Fahrenheit") {
+      const tempFahrenheit = convertToFahrenheit(tempCelsius);
+      document.getElementById("temp-celsius").textContent = tempFahrenheit;
+      e.target.textContent = "Convert to Celsius";
+    } else {
+      document.getElementById("temp-celsius").textContent = 17;
+      e.target.textContent = "Convert to Fahrenheit";
+    }
+  });
+  
+  document
+    .getElementById("city-search-form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+      const cityInput = document.getElementById("city-input").value;
+      document.getElementById("city-result").textContent = `City: ${cityInput}`;
+    });
+  
+  displayDateTime();
+  
 const apiKey = 'f54e3b1562279d53d062638431ad1249'; 
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
