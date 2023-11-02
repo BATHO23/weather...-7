@@ -45,7 +45,7 @@ function displayDateTime() {
     });
   
   displayDateTime();
-  
+
 const apiKey = 'f54e3b1562279d53d062638431ad1249'; 
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
@@ -103,11 +103,6 @@ fetch(url)
 
     // Display humidity in an h3 element
     document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
-
-    // Change background image dynamically
-    const backgroundImageUrl = getBackgroundImage(data.weather[0].description);
-    body.style.backgroundImage = `url(${backgroundImageUrl})`;
-
     // Update the time and date in the h4 element
     updateDateTime();
 })
