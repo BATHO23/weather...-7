@@ -119,7 +119,7 @@ const unsplashApiUrl = https;//api.unsplash.com/photos/random?query=${weatherDes
 axios.get(unsplashApiUrl)
   .then(response => {
     const backgroundImageUrl = response.data.urls.regular;
-    body.style.backgroundImage = url(${backgroundImageUrl});
+    body.style.backgroundImage = url($[backgroundImageUrl])
   })
   .catch(error => {
     console.log(error);
