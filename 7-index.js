@@ -100,7 +100,6 @@ fetch(url)
     document.getElementById('resultText').innerHTML = resultText;
     // Display wind speed in an h3 element
     document.getElementById('windSpeed').textContent = `Wind Speed: ${windSpeed} m/s`;
-
     // Display humidity in an h3 element
     document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
     // Update the time and date in the h4 element
